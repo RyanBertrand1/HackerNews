@@ -1,0 +1,25 @@
+.main-container{
+    background-color: #FF6600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+}
+
+.title, .tool{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.y-img{
+    border: solid white 1px;
+    margin-right: 3px;
+}
+
+.search-bar{
+    background-color: white;
+}
+
+
