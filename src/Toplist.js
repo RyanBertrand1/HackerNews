@@ -23,11 +23,19 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function CSSGrid() {
-  const classes = useStyles();
+const classes = useStyles();
 
-  return (
-    <div>
+export default class TopList extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+      data: this.props.data
+    }
+  }
+
+  render(){
+    return(
+      <div>
       <Typography variant="subtitle1" gutterBottom>
         Top 3 des News
       </Typography>
@@ -55,5 +63,6 @@ export default function CSSGrid() {
         </Grid>
       </Grid>
       </div>
-  );
+    );
+  }
 }
