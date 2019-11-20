@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, BrowserRouter, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const categories = ['new', 'past', 'comments', 'ask', 'show', 'jobs', 'submit']; 
 

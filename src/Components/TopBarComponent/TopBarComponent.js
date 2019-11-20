@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextField, Button, IconButton, Badge, Icon} from '@material-ui/core';
+import {TextField, IconButton, Icon} from '@material-ui/core';
 
 
 export default class TopBarComponent extends React.Component{
@@ -7,7 +7,7 @@ export default class TopBarComponent extends React.Component{
         return(
             <div className="top-bar">
                 <div className="title">
-                    <img src='https://news.ycombinator.com/y18.gif' className="y-img"/>
+                    <img alt="y" src='https://news.ycombinator.com/y18.gif' className="y-img"/>
                     <h2>HackerNews</h2>
                 </div>
 
