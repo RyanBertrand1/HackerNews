@@ -18,7 +18,7 @@ export default class TopBarComponent extends React.Component{
                             brightness_5
                         </Icon>
                     </IconButton>
-                    <TextField label="search" variant="filled"></TextField>
+                    <TextField label="search" variant="filled" className="search-bar"></TextField>
                 </div>
             </div>
         );

@@ -1,5 +1,29 @@
-.menu{
+.menu-list{
     margin-left: 1em;
+    border-right: grey solid 1px;
+    width: 15em;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    height: 100%;
+    padding-top: 5em;
+}
+
+.menu-item{
+    border-radius: 2em;
+    display: flex;
+    padding-left: 1em; 
+    align-items: center;
+    width: 7em;
+    height: 2em;
+    cursor: pointer;
+}
+
+.menu-item:hover{
+    background-color: #ffd1b3; 
+}
+
+.link{
+    color : black;
+    text-decoration: none;
 }

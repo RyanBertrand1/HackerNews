@@ -7,8 +7,8 @@ export default class BaseComponent extends React.Component {
     render(){
         return(
             <div className="base">
-                <TopBar></TopBar>
-                <Menu></Menu>
+                <TopBar className="top-bar"></TopBar>
+                <Menu className="menu"></Menu>
             </div>
         );
     }
