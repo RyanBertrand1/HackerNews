@@ -21,21 +21,20 @@ function List(props){
   return (
     <div>
       <Typography variant="subtitle1" gutterBottom>
-        Top 3 des News
+        <h3>Top 3</h3>
       </Typography>
       <Grid container spacing={3}>
         {
           props.data.map(e => {
-              console.log(e);
-              return <Grid container spacing={3}  key={e}>
-                      <Grid item xs={2}></Grid>
-                      <Grid item xs={2}></Grid>
-                      <Grid item xs={12} key ={e}>
-                        <Paper className={classes.paper}>{e}</Paper>
+              return <Grid item xs={12}>
+                        <Paper className={classes.paper}>
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                          <span>by {e.by}</span>
+                          <span>{e.score} points</span>
+                        </div>
+                        <h4><a href={e.url} style={{color: 'black', textDecoration: 'none'}}>{e.title}</a></h4>
+                        </Paper>
                       </Grid>
-                      <Grid item xs={2}></Grid>
-                      <Grid item xs={2}></Grid>
-                    </Grid>
             }
           )
         }
