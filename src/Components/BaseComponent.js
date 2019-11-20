@@ -1,16 +1,16 @@
 import React from 'react';
 import './BaseComponent.css';
-import TopBar from '../TopBarComponent/TopBarComponent';
-import Menu from '../MenuComponent/MenuComponent';
+import TopBar from './TopBarComponent/TopBarComponent';
+import Menu from './MenuComponent/MenuComponent';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import All from '../AllComponent/AllComponent';
-import New from '../NewComponent/NewComponent';
-import Past from '../PastComponent/PastComponent';
-import Comments from '../CommentsComponent/CommentsComponent';
-import Ask from '../AskComponent/AskComponent';
-import Show from '../ShowComponent/ShowComponent';
-import Jobs from '../JobsComponent/JobsComponent';
-import Submit from '../SubmitComponent/SubmitComponent';
+import All from './AllComponent/AllComponent';
+import New from './NewComponent/NewComponent';
+import Past from './PastComponent/PastComponent';
+import Comments from './CommentsComponent/CommentsComponent';
+import Ask from './AskComponent/AskComponent';
+import Show from './ShowComponent/ShowComponent';
+import Jobs from './JobsComponent/JobsComponent';
+import Submit from './SubmitComponent/SubmitComponent';
 
 export default class BaseComponent extends React.Component {
     render(){

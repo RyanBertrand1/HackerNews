@@ -1,5 +1,4 @@
 import React from 'react';
-import './MenuComponent.css';
 import {Link, BrowserRouter, Route} from 'react-router-dom';
 
 const categories = ['new', 'past', 'comments', 'ask', 'show', 'jobs', 'submit']; 
