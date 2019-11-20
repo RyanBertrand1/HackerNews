@@ -11,7 +11,7 @@ export default class MenuComponent extends React.Component{
             <div className="menu-list">
                 <BrowserRouter>
                     {
-                        categories.map(el => <h3 className="menu-item" to="/1"><Link className="link">{el}</Link></h3>)
+                        categories.map(el => <h3 className="menu-item"><Link className="link">{el}</Link></h3>)
                     }
                 </BrowserRouter>
             </div>
