@@ -182,7 +182,6 @@ export default class NewComponent extends React.Component{
             
         }
     }
-
     render(){
         return(
             <div className="categories">

@@ -6,7 +6,13 @@ export default class ItemListComponent extends React.Component{
         super(props);
         this.state = {
             data: props.data,
+            visitedStories: []
         }
+    }
+
+    componentDidMount(){
+        let localeStories = localStorage.getItem('visitedStories');
+        this.setState({visitedStories: localeStories ? localeStories : []});
     }
 
     render(){
@@ -25,4 +31,9 @@ export default class ItemListComponent extends React.Component{
             </div>
         );
     }
+
+    /*addVisitedStory(story){
+        this.setState({visitedStories : [ ...this.state.visitedStories, story.id]});
+        localStorage.setItem('visitedNews', this.state.visitedStories);
+    }*/
 }
