@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import BaseComponent from './Components/BaseComponent';
+import BaseComponent from './View/BaseComponent';
 
 function App() {
   return (

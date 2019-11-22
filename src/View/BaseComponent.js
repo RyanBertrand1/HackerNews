@@ -1,7 +1,7 @@
 import React from 'react';
 import './BaseComponent.css';
-import TopBar from './TopBarComponent/TopBarComponent';
-import Menu from './MenuComponent/MenuComponent';
+import TopBar from '../Components/TopBarComponent/TopBarComponent';
+import Menu from '../Components/MenuComponent/MenuComponent';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import All from './AllComponent/AllComponent';
 import New from './NewComponent/NewComponent';

@@ -1,8 +1,8 @@
 import React from 'react';
-import TopList from '../TopListComponent/Toplist';
+import TopList from '../../Components/TopListComponent/Toplist';
 import Service from '../../Services/HnServices';
-import ItemComponent from '../ItemListComponent/ItemComponent/ItemComponent';
-import ItemList from  '../ItemListComponent/ItemListComponent';
+import ItemComponent from '../../Components/ItemListComponent/ItemComponent/ItemComponent';
+import ItemList from  '../../Components/ItemListComponent/ItemListComponent';
 
 export default class NewComponent extends React.Component{
 
