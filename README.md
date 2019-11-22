@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# New Interface wor the Website [Hacker News]()
+# New Interface wor the Website [Hacker News](https://news.ycombinator.com/news)
 
 ## From whom ?
 
