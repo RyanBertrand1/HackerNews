@@ -1,5 +1,5 @@
 import React from 'react';
-import TopList from '../../Components/TopListComponent/Toplist';
+import TopList from '../../Components/TopListComponent/TopListComponent';
 import Service from '../../Services/HnServices';
 import ItemComponent from '../../Components/ItemListComponent/ItemComponent/ItemComponent';
 import ItemList from  '../../Components/ItemListComponent/ItemListComponent';
@@ -24,7 +24,7 @@ export default class NewComponent extends React.Component{
                   {
                     "by" : "user2",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8864,
                     "kids" : [],
                     "score" : 84,
                     "time" : 1175714200,
@@ -35,7 +35,7 @@ export default class NewComponent extends React.Component{
                   {
                     "by" : "user3",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8865,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -49,7 +49,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user1",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8866,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -60,7 +60,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user2",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8867,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -71,7 +71,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user3",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8868,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -82,7 +82,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user4",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8869,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -93,7 +93,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user5",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8870,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -104,7 +104,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user6",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8871,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -115,7 +115,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user7",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8872,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -126,7 +126,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user8",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8873,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -137,7 +137,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user9",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8874,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -148,7 +148,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user10",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8875,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -159,7 +159,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user11",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8876,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,
@@ -170,7 +170,7 @@ export default class NewComponent extends React.Component{
                 {
                     "by" : "user12",
                     "descendants" : 0,
-                    "id" : 8863,
+                    "id" : 8877,
                     "kids" : [],
                     "score" : 57,
                     "time" : 1175714200,

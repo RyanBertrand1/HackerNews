@@ -18,7 +18,7 @@ export default class ItemListComponent extends React.Component{
                 <div className="item-list">
                     {
                         this.state.data.map(item => {
-                            return <Item item={item}></Item>
+                            return <Item item={item} key={item.id}></Item>
                         })
                     }
                 </div>

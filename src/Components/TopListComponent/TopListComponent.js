@@ -21,12 +21,12 @@ function List(props){
   return (
     <div>
       <Typography variant="subtitle1" gutterBottom>
-        <h3>Top 3</h3>
+        Top 3
       </Typography>
       <Grid container spacing={3}>
         {
           props.data.map(e => {
-              return <Grid item xs={12}>
+              return <Grid item xs={12} key={e.id}>
                         <Paper className={classes.paper}>
                         <div style={{display: 'flex', justifyContent: 'space-between'}}>
                           <span>by {e.by}</span>
