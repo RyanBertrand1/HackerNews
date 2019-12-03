@@ -68,7 +68,7 @@
 
 .y-img{
     border: solid white 1px;
-    margin-right: 3px;
+    margin-right: 5px;
 }
 
 .item-card{
@@ -79,6 +79,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 5em;
+    padding-bottom: 0.5em
 }
 
 .item-list{
