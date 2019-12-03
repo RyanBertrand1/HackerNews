@@ -1,14 +1,15 @@
 import React from 'react';
 import TopList from '../../Components/TopListComponent/TopListComponent';
 import Service from '../../Services/HnServices';
-import ItemComponent from '../../Components/ItemListComponent/ItemComponent/ItemComponent';
 import ItemList from  '../../Components/ItemListComponent/ItemListComponent';
+import { CircularProgress } from '@material-ui/core';
 
 export default class NewComponent extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
+            isLoading : true,
             topStories : [
                 {
                     "by" : "user1",
@@ -182,13 +183,31 @@ export default class NewComponent extends React.Component{
             
         }
     }
-    render(){
-        return(
-            <div className="categories">
-                <h1>New</h1>
-                <TopList data = {this.state.topStories}></TopList>
-                <ItemList data={this.state.newStories}></ItemList>
-            </div>
-        );
+
+    componentDidMount(){
+        Service.getTop3Stories().then(res =>{  
+            this.setState({isLoading: false, topStories: res});
+            
+        });
+    }
+
+    render(){            
+        if(this.state.isLoading){
+            return(
+                <div className ="categories" style={{bottom: "0", justifyContent: "center"}}>
+                    <CircularProgress>
+                    </CircularProgress>
+                </div>
+            );
+        }
+        else{
+            return(
+                <div className="categories">
+                    <h1>New</h1>
+                    <TopList data = {this.state.topStories}></TopList>
+                    <ItemList data={this.state.newStories}></ItemList>
+                </div>
+            );
+        }
     }
 }
