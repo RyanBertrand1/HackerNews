@@ -16,9 +16,9 @@ export default class BaseComponent extends React.Component {
     render(){
         return(
             <div className="base">
-                <TopBar className="top-bar"></TopBar>
-                
                 <BrowserRouter className="router">
+                    <TopBar className="top-bar"></TopBar>
+
                     <Menu className="menu"></Menu>
                     
                     <Switch>
