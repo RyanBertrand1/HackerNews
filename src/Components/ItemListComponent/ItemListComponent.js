@@ -18,9 +18,6 @@ export default class ItemListComponent extends React.Component{
     render(){
         return(
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '5em'}}>
-                <h3>
-                    Newest
-                </h3>
                 <div className="item-list">
                     {
                         this.state.data.map(item => {
