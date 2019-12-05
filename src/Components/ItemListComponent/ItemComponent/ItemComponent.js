@@ -17,18 +17,20 @@ export default class ItemComponent extends React.Component{
                 <div onClick={this.openUrl} style={{cursor: "pointer", height:"100%", display: "flex", flexDirection: "column", justifyContent:"space-between", alignItems: "center"}}>
                     <div>
                         <h4>
-                            {this.state.item.title}<br/>
-                            <small className="url">{this.state.item.url}</small>
+                            <span data-testid="title">{this.state.item.title}</span><br/>
+                            <small className="url" data-testid="url">{this.state.item.url}</small>
                         </h4>
                     </div>
-                    <div style={{display: 'flex', justifyContent: 'space-between', width: '90%', height: "1.5em"}}>
-                        <small>by {this.state.item.author}</small>
-                        <small>{this.state.item.points} points</small>
+                    <div style={{display: 'flex', justifyContent: 'space-between', width: '100%', padding: '0.5em'}}>
+                        <small style={{flex: 1}} data-testid="author">by {this.state.item.author}</small>
+                        <small style={{flex: 1, display: 'flex', justifyContent:'flex-end'}} data-testid="points">{this.state.item.points} points</small>
                     </div>
-                </div>
+                </div> 
                 <div>
-                    <small><Link style={{cursor: "pointer"}} to={`/story/${this.state.item.id}`}>{this.state.item.num_comments} comments</Link></small>
+                    <small><Link style={{cursor: "pointer"}} to={`/story/${this.state.item.id}`}>{this.state.item.num_comments ? `${this.state.item.num_comments} comments` : ''}</Link></small>
                 </div>
+                    
+                
             </Card>
         );
     }

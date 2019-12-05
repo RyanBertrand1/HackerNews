@@ -32,7 +32,6 @@ export default {
     },
 
     async getShow(sortBy){
-        console.log(sortBy);
         let url;
         if(sortBy === "best"){
             url = `${algoliaURL}/search?tags=show_hn`;
@@ -56,7 +55,7 @@ export default {
             url = `${algoliaURL}/search_by_date?tags=job`
         }
 
-        return axios.get(url).then(res => res.data.hits);
+        return await axios.get(url).then(res => res.data.hits);
     }
 
 }
