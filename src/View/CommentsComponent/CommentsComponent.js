@@ -4,7 +4,7 @@ export default class CommentsComponent extends React.Component{
     render(){
         return(
             <div className="categories">
-                Comments
+                <h1 data-testid="pagetitle">Comments</h1>
             </div>
         );
     }

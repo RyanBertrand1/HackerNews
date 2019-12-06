@@ -32,7 +32,7 @@ export default class AllComponent extends React.Component{
         else{
             return(
                 <div className="categories">
-                    <h1>All</h1>
+                    <h1 data-testid="pagetitle">All</h1>
                     <ItemList data={this.state.all}></ItemList>
                     <h6 onClick={this.getData}>See more</h6>
                 </div>

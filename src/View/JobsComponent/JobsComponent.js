@@ -29,7 +29,7 @@ export default class JobsComponent extends React.Component{
         } else {
             return (
                 <div className="categories">
-                    <h1>Jobs</h1>
+                    <h1 data-testid="pagetitle">Jobs</h1>
                     <FormControl>
                         <Select onChange={this.sort} value={this.state.sortBy}>
                             <MenuItem value="best">Best</MenuItem>

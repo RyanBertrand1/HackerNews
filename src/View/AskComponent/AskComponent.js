@@ -32,7 +32,7 @@ export default class AskComponent extends React.Component{
         else{
             return(
                 <div className="categories">
-                    <h1>Ask</h1>
+                    <h1 data-testid="pagetitle">Ask</h1>
                     <FormControl>
                         <Select onChange={this.sort} value={this.state.sortBy}>
                             <MenuItem value="best">Best</MenuItem>
@@ -47,8 +47,8 @@ export default class AskComponent extends React.Component{
 
     getData(){
         this.setState({isLoading: true}, () => {
-            Service.getShow(this.state.sortBy).then(res => {
-                this.setState({isLoading: false, show: res});
+            Service.getAsk(this.state.sortBy).then(res => {
+                this.setState({isLoading: false, ask: res});
             });
         });
     }
