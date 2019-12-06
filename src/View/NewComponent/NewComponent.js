@@ -31,7 +31,7 @@ export default class NewComponent extends React.Component{
         else{
             return(
                 <div className="categories">
-                    <h1>New</h1>
+                    <h1 data-testid="pagetitle">New</h1>
                     <ItemList data={this.state.new}></ItemList>
                 </div>
             );

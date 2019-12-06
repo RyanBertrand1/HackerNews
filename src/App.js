@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
 import BaseComponent from './View/BaseComponent';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <BaseComponent></BaseComponent>
+    <BrowserRouter>
+      <BaseComponent/>
+    </BrowserRouter>
   );
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './BaseComponent.css';
 import TopBar from '../Components/TopBarComponent/TopBarComponent';
 import Menu from '../Components/MenuComponent/MenuComponent';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import All from './AllComponent/AllComponent';
 import New from './NewComponent/NewComponent';
 import Past from './PastComponent/PastComponent';
@@ -16,7 +16,6 @@ export default class BaseComponent extends React.Component {
     render(){
         return(
             <div className="base">
-                <BrowserRouter className="router">
                     <TopBar className="top-bar"></TopBar>
 
                     <Menu className="menu"></Menu>
@@ -47,7 +46,6 @@ export default class BaseComponent extends React.Component {
                             <All></All>
                         </Route>
                     </Switch>
-                </BrowserRouter>
             </div>
         );
     }

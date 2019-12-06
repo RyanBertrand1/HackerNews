@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM , {unmountComponentAtNode, render} from 'react-dom';
 import { act } from "react-dom/test-utils";
 import Base from './BaseComponent';
+import {BrowserRouter, MemoryRouter} from 'react-router-dom'
 
 let container = null;
 
@@ -15,8 +16,12 @@ afterEach(() => {
     container.remove();
 });
 
-it('renders without crashing', () => {
-  act(() => {
-    render(<Base></Base>, container)    
-  }) 
+it("test router", () => {
+
+  act( () => {
+    render(<MemoryRouter initialEntries={["/submit"]}><Base /></MemoryRouter>, container);
+  });
+
+  expect(container.querySelector("[data-testid=pagetitle]").innerHTML).toBe("Submit");
+
 });
