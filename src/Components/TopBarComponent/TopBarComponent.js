@@ -1,13 +1,15 @@
 import React from 'react';
-import {TextField, IconButton, Icon, Link} from '@material-ui/core';
-
+import {TextField, IconButton, Icon} from '@material-ui/core';
+import { Redirect } from 'react-router';
+import {Link} from 'react-router-dom';
 
 export default class TopBarComponent extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            keyword : ""
+            query : "",
+            search: false
         }
         this.changeKeyword = this.changeKeyword.bind(this);
         this.search = this.search.bind(this);
@@ -31,17 +33,22 @@ export default class TopBarComponent extends React.Component{
                     </IconButton>
                     <TextField label="search" variant="filled" className="search-bar" onChange={this.changeKeyword} onKeyUp={this.search}></TextField>
                 </div>
+                {this.state.search === true &&
+                    <Redirect to={`/search/${this.state.query}`}></Redirect>
+                }
             </div>
         );
     }
 
     changeKeyword(event){
-        this.setState({keyword: event.target.value});
+        this.setState({query: event.target.value});
     }
 
     search(event){
         if(event.key === "Enter"){
-            window.location.href = `https://hn.algolia.com/?q=${this.state.keyword}`;
+            this.setState({search: true}, () => {
+                this.setState({search : false})
+            });
         }
     }
 }

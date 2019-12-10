@@ -17,7 +17,7 @@ export default {
     },
 
     async getNew(pages){
-        return await axios.get(`${algoliaURL}/search_by_date?tags=(story, ask_hn, show)&page=${pages}`).then(res => res.data.hits);
+        return await axios.get(`${algoliaURL}/search_by_date?tags=(story, ask_hn, show_hn)&page=${pages}`).then(res => res.data.hits);
     },
 
     async getAsk(sortBy, pages){
@@ -63,6 +63,17 @@ export default {
         }
 
         return await axios.get(url).then(res => res.data.hits);
-    }
+    },
 
+    async getSearchResults(sortBy, pages, query){
+        let url; 
+        if(sortBy === "best"){
+            url = `${algoliaURL}/search?query=${query}&tags=(story, job, show_hn, ask_hn)&page=${pages}`;
+        } 
+        if(sortBy === "newest"){
+            url = `${algoliaURL}/search_by_date?query=${query}&tags=(story, job, show_hn, ask_hn)&page=${pages}`;
+        }
+
+        return await axios.get(url).then(res => res.data.hits);
+    }
 }
