@@ -11,9 +11,12 @@ export default class AllComponent extends React.Component{
             isLoading : true,
             topStories: [],
             all: [],
+            pages: 0,
+            addingItems: true
         }
 
         this.getData = this.getData.bind(this);
+        this.more = this.more.bind(this);
     }
 
     componentDidMount(){
@@ -34,15 +37,26 @@ export default class AllComponent extends React.Component{
                 <div className="categories">
                     <h1 data-testid="pagetitle">All</h1>
                     <ItemList data={this.state.all}></ItemList>
-                    <h6 onClick={this.getData}>See more</h6>
+                    {this.state.addingItems === false &&
+                        <button onClick={this.more}>more</button>
+                    }
+                    {this.state.addingItems === true &&
+                        <CircularProgress></CircularProgress>
+                    }
                 </div>
             );
         }
     }
 
     getData(){
-        Service.getAll().then(res => {
-            this.setState({all: this.state.all.concat(res), isLoading: false});
+        Service.getAll(this.state.pages).then(res => {
+            this.setState({all:this.state.all.concat(res), isLoading: false, addingItems: false});
+        });
+    }
+
+    more(){
+        this.setState({addingItems: true, pages: this.state.pages+1}, () => {
+            this.getData();
         });
     }
 }

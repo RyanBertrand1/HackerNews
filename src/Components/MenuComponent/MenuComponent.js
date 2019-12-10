@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const categories = ['new', 'past', 'comments', 'ask', 'show', 'jobs', 'submit']; 
+const categories = ['new', 'comments', 'ask', 'show', 'jobs', 'submit']; 
 
 export default class MenuComponent extends React.Component{
 

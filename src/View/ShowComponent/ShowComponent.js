@@ -9,10 +9,13 @@ export default class ShowComponent extends React.Component{
         this.state = {
             isLoading: true,
             show: [],
-            sortBy: "best"
+            sortBy: "best",
+            pages: 0,
+            addingItems: false,
         }
 
         this.sort = this.sort.bind(this);
+        this.more = this.more.bind(this);
     }
 
     componentDidMount(){
@@ -37,21 +40,31 @@ export default class ShowComponent extends React.Component{
                         </Select>
                     </FormControl>
                     <ItemList data={this.state.show}></ItemList>
+                    {this.state.addingItems === false &&
+                        <button onClick={this.more}>more</button>
+                    }
+                    {this.state.addingItems === true &&
+                        <CircularProgress></CircularProgress>
+                    }
                 </div>
             );
         }
     }
 
     getData(){
-        this.setState({isLoading: true}, () => {
-            Service.getShow(this.state.sortBy).then(res => {
-                this.setState({isLoading: false, show: res});
-            });
+        Service.getShow(this.state.sortBy, this.state.pages).then(res => {
+            this.setState({isLoading: false, show: this.state.show.concat(res),addingItems: false});
         });
     }
 
     sort(event){
-        this.setState({sortBy: event.target.value}, () => {
+        this.setState({sortBy: event.target.value, pages: 0, show: [], isLoading: true}, () => {
+            this.getData();
+        });
+    }
+
+    more(){
+        this.setState({addingItems: true, pages: this.state.pages+1}, () => {
             this.getData();
         });
     }

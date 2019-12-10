@@ -10,10 +10,13 @@ export default class AskComponent extends React.Component{
         this.state ={
             isLoading: true,
             ask: [],
-            sortBy: "best"
+            sortBy: "newest",
+            pages: 0,
+            addingItems: false
         }
 
         this.sort = this.sort.bind(this);
+        this.more = this.more.bind(this);
     }
 
     componentDidMount(){
@@ -40,22 +43,32 @@ export default class AskComponent extends React.Component{
                         </Select>
                     </FormControl>
                     <ItemList data={this.state.ask}></ItemList>
+                    {this.state.addingItems === false &&
+                        <button onClick={this.more}>more</button>
+                    }
+                    {this.state.addingItems === true &&
+                        <CircularProgress></CircularProgress>
+                    }
                 </div>
             );
         }
     }
 
     getData(){
-        this.setState({isLoading: true}, () => {
-            Service.getAsk(this.state.sortBy).then(res => {
-                this.setState({isLoading: false, ask: res});
-            });
+        Service.getAsk(this.state.sortBy, this.state.pages).then(res => {
+            this.setState({isLoading: false, ask: this.state.ask.concat(res), addingItems: false});
         });
     }
     
     sort(event){
-        this.setState({sortBy: event.target.value}, () => {
+        this.setState({sortBy: event.target.value, pages: 0, isLoading: true, ask: []}, () => {
             this.getData();
         });
+    }
+
+    more(){
+        this.setState({addingItems: true, pages: this.state.pages+1}, ()=> {
+            this.getData();
+        })
     }
 }

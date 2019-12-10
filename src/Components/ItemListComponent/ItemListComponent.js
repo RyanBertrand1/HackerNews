@@ -5,7 +5,6 @@ export default class ItemListComponent extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            data: props.data,
             visitedStories: []
         }
     }
@@ -15,12 +14,16 @@ export default class ItemListComponent extends React.Component{
         this.setState({visitedStories: localeStories ? localeStories : []});
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        return this.props.data.length !== nextProps.data.length
+    }
+
     render(){
         return(
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '5em'}}>
                 <div className="item-list">
                     {
-                        this.state.data.map((item, index) => {
+                        this.props.data.map((item, index) => {
                             return <Item item={item} key={index}></Item>
                         })
                     }

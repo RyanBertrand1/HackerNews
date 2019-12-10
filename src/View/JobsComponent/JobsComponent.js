@@ -9,10 +9,13 @@ export default class JobsComponent extends React.Component{
         this.state = {
             isLoading: true,
             job: [],
-            sortBy : "best"
+            sortBy : "best",
+            pages:0,
+            addingItems: false,
         }
 
         this.sort = this.sort.bind(this);
+        this.more = this.more.bind(this);
     }
 
     componentDidMount(){
@@ -37,6 +40,12 @@ export default class JobsComponent extends React.Component{
                         </Select>
                     </FormControl>
                     <ItemList data={this.state.job}></ItemList>
+                    {this.state.addingItems === false &&
+                        <button onClick={this.more}>more</button>
+                    }
+                    {this.state.addingItems === true &&
+                        <CircularProgress></CircularProgress>
+                    }
                 </div>
             );
         }
@@ -45,15 +54,19 @@ export default class JobsComponent extends React.Component{
     }
 
     getData(){
-        this.setState({isLoading: true},() => {
-            Service.getJobs(this.state.sortBy).then(res => {
-                this.setState({isLoading: false, job: res});
-            });
+        Service.getJobs(this.state.sortBy, this.state.pages).then(res => {
+            this.setState({isLoading: false, job: this.state.job.concat(res), addingItems:false});
         });
     }
 
     sort(event){
-        this.setState({sortBy: event.target.value}, () => {
+        this.setState({sortBy: event.target.value, pages: 0, job: [], isLoading:true}, () => {
+            this.getData();
+        });
+    }
+
+    more(){
+        this.setState({pages: this.state.pages+1, addingItems: true}, () => {
             this.getData();
         });
     }
