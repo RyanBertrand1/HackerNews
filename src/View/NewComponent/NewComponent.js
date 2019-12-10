@@ -9,14 +9,16 @@ export default class NewComponent extends React.Component{
         super(props);
         this.state = {
             isLoading : true,
+            addingItems: false,
             new: [],
+            pages: 0
         }
+
+        this.more = this.more.bind(this);
     }
 
     componentDidMount(){
-        Service.getNew().then(res => {
-            this.setState({isLoading: false, new: res})
-        });
+        this.getData();
     }
 
     render(){            
@@ -33,8 +35,26 @@ export default class NewComponent extends React.Component{
                 <div className="categories">
                     <h1 data-testid="pagetitle">New</h1>
                     <ItemList data={this.state.new}></ItemList>
+                    {this.state.addingItems === false &&
+                        <button onClick={this.more}>more</button>
+                    }
+                    {this.state.addingItems === true &&
+                        <CircularProgress></CircularProgress>
+                    }
                 </div>
             );
         }
+    }
+
+    getData(){
+        Service.getNew(this.state.pages).then(res => {
+            this.setState({isLoading: false, new: this.state.new.concat(res), addingItems: false});
+        });
+    }
+
+    more(){
+        this.setState({pages: this.state.pages + 1, addingItems: true}, () => {
+            this.getData();
+        })
     }
 }

@@ -24,9 +24,6 @@ export default class BaseComponent extends React.Component {
                         <Route path="/new">
                             <New></New>
                         </Route>
-                        <Route path="/past">
-                            <Past></Past>
-                        </Route>
                         <Route path="/comments">
                             <Comments></Comments>
                         </Route>
