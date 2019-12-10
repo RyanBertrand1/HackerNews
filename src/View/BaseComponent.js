@@ -5,12 +5,12 @@ import Menu from '../Components/MenuComponent/MenuComponent';
 import { Route, Switch } from 'react-router-dom';
 import All from './AllComponent/AllComponent';
 import New from './NewComponent/NewComponent';
-import Past from './PastComponent/PastComponent';
 import Comments from './CommentsComponent/CommentsComponent';
 import Ask from './AskComponent/AskComponent';
 import Show from './ShowComponent/ShowComponent';
 import Jobs from './JobsComponent/JobsComponent';
 import Submit from './SubmitComponent/SubmitComponent';
+import Search from './SearchResultComponent/SearchResultComponent';
 
 export default class BaseComponent extends React.Component {
     render(){
@@ -38,6 +38,9 @@ export default class BaseComponent extends React.Component {
                         </Route>
                         <Route path="/submit">
                             <Submit></Submit>
+                        </Route>
+                        <Route exact path="/search/:query">
+                            <Search></Search>
                         </Route>
                         <Route path="/">
                             <All></All>
