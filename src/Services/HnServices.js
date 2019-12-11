@@ -5,7 +5,7 @@ const algoliaURL = "http://hn.algolia.com/api/v1";
 
 export default {
     async getItemById(id){
-         return await axios.get( `${hnURL}/item/${id}.json`).then(res => res.data);
+         return await axios.get( `${algoliaURL}/items/${id}`);
     },
 
     async getTop3Stories(){

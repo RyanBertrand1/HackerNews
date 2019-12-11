@@ -34,7 +34,7 @@ export default class CommentsComponent extends React.Component{
                 <div className="categories">
                     <h1 data-testid="pagetitle">Comments</h1>
                     <FormControl>
-                        <Select onChange={this.sort} value={this.state.sortBy}>
+                        <Select onChange={this.sort} value={this.state.sortBy} style={{marginBottom: "2em"}}>
                             <MenuItem value="best">Best</MenuItem>
                             <MenuItem value ="newest">Newest</MenuItem>
                         </Select>
