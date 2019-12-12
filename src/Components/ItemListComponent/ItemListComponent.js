@@ -2,18 +2,6 @@ import React from 'react';
 import Item from '../ItemListComponent/ItemComponent/ItemComponent';
 
 export default class ItemListComponent extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            visitedStories: []
-        }
-    }
-
-    componentDidMount(){
-        let localeStories = localStorage.getItem('visitedStories');
-        this.setState({visitedStories: localeStories ? localeStories : []});
-    }
-
     shouldComponentUpdate(nextProps, nextState){
         return this.props.data.length !== nextProps.data.length
     }
@@ -31,9 +19,4 @@ export default class ItemListComponent extends React.Component{
             </div>
         );
     }
-
-    /*addVisitedStory(story){
-        this.setState({visitedStories : [ ...this.state.visitedStories, story.id]});
-        localStorage.setItem('visitedNews', this.state.visitedStories);
-    }*/
 }

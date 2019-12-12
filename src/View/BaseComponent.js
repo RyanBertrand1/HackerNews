@@ -11,8 +11,16 @@ import Show from './ShowComponent/ShowComponent';
 import Jobs from './JobsComponent/JobsComponent';
 import Submit from './SubmitComponent/SubmitComponent';
 import Search from './SearchResultComponent/SearchResultComponent';
+import { init } from '../actions';
+import { connect } from 'react-redux';
 
-export default class BaseComponent extends React.Component {
+class BaseComponent extends React.Component {
+    componentDidMount(){
+        const s = JSON.parse(localStorage.getItem('stories'));
+        const stories = s ? s : [];
+        this.props.addStoriesFromLocaleStorage(stories);
+    }
+
     render(){
         return(
             <div className="base">
@@ -50,3 +58,12 @@ export default class BaseComponent extends React.Component {
         );
     }
 }
+
+function mapDispatchToProps(dispatch, ownProps) {
+    const props = {
+      addStoriesFromLocaleStorage: stories => dispatch(init(stories)),
+    };
+    return props;
+  }
+  
+export default connect(null, mapDispatchToProps)(BaseComponent);
