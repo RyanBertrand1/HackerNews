@@ -7,7 +7,7 @@ function reducer(oldState = [], action){
             return newState;
         }
         case 'ADD_NEWS': {
-            const newState = [...oldState, action.story.objectID];
+            const newState = [...oldState, action.news.objectID];
             localStorage.removeItem('stories');
             localStorage.setItem('stories', JSON.stringify(newState))
             return newState;

@@ -1,7 +1,7 @@
-export function addNews(story) {
+export function addNews(news) {
     const action = {
-      type: 'ADD_STORY',
-      story
+      type: 'ADD_NEWS',
+      news
     }  
     return action;
 }
