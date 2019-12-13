@@ -24,11 +24,11 @@ class ItemComponent extends React.Component{
     render(){
         return(
             <Card className="item-card">
-                <div style={{height: '100%', padding: '0.5em', backgroundColor: this.state.visited ? "lightgrey" : "white"}}>
-                    <div onClick={this.openUrl} style={{cursor: "pointer", height:"100%", display: "flex", flexDirection: "column", justifyContent:"space-between", alignItems: "center"}}>
+                <div style={{height: '100%', padding: '0.5em', backgroundColor: this.state.visited ? "lightgrey" : "white", display: 'flex', justifyContent: 'space-between', flexDirection: 'column', alignItems: 'center'}}>
+                    <div onClick={this.openUrl} style={{cursor: "pointer", height:"100%", maxHeight: '100%', display: "flex", flexDirection: "column", justifyContent:"space-between", alignItems: "center"}}>
                         <div>
                             <h4>
-                                <span data-testid="title">{this.state.item.title}</span><br/>
+                                <span className="item-title" data-testid="title">{this.state.item.title}</span><br/>
                                 <small className="url" data-testid="url">{this.state.item.url}</small>
                             </h4>
                         </div>
@@ -37,9 +37,11 @@ class ItemComponent extends React.Component{
                             <small style={{flex: 1, display: 'flex', justifyContent:'flex-end'}} data-testid="points">{this.state.item.points} points</small>
                         </div>
                     </div> 
+                
                     <div>
                         <small><Link style={{cursor: "pointer"}} to={`/story/${this.state.item.id}`}>{this.state.item.num_comments ? `${this.state.item.num_comments} comments` : ''}</Link></small>
                     </div>
+                    
                 </div>
             </Card>
         );

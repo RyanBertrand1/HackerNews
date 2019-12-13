@@ -8,10 +8,6 @@ export default {
          return await axios.get( `${algoliaURL}/items/${id}`);
     },
 
-    async getTop3Stories(){
-        return await axios.get(`${hnURL}/topstories.json`).then(r => r.data.slice(0,3));
-    },
-
     async getAll(pages){
         return await axios.get(`${algoliaURL}/search?tags=front_page&page=${pages}`).then(res => res.data.hits);
     },
