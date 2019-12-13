@@ -1,4 +1,4 @@
-export function addStory(story) {
+export function addNews(story) {
     const action = {
       type: 'ADD_STORY',
       story

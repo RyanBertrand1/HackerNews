@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, Link} from '@material-ui/core';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { addStory } from '../../../actions';
+import { addNews } from '../../../actions';
 import store from '../../../store';
 
 class ItemComponent extends React.Component{
@@ -48,7 +48,7 @@ class ItemComponent extends React.Component{
     }
 
     openUrl(){
-        store.dispatch(addStory(this.state.item));
+        store.dispatch(addNews(this.state.item));
         window.location.href = this.state.item.url;
     }
 }

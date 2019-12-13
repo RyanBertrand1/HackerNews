@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-const hnURL = "https://hacker-news.firebaseio.com/v0";
 const algoliaURL = "http://hn.algolia.com/api/v1";
 
 export default {
